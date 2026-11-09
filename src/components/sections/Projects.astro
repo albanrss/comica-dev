@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects")).sort(
+	(a, b) => (b.data.year ?? 0) - (a.data.year ?? 0),
+);
+---
+
+<section class="section" id="projects">
+	<div class="container">
+		<h2 class="section__title">Projects</h2>
+
+		{
+			projects.length > 0 ? (
+				<ul class="grid">
+					{projects.map((project) => (
+						<li class:list={["card", `accent-${project.data.accent}`]}>
+							<div class="card__top">
+								<h3 class="card__title">{project.data.title}</h3>
+								{project.data.year && (
+									<span class="card__year">{project.data.year}</span>
+								)}
+							</div>
+
+							<p class="card__desc">{project.data.description}</p>
+
+							{
+								project.data.stack.length > 0 && (
+									<ul class="tags">
+										{project.data.stack.map((tech) => (
+											<li class="tag">{tech}</li>
+										))}
+									</ul>
+								)
+							}
+
+							{
+								(project.data.link || project.data.repo) && (
+									<div class="card__links">
+										{project.data.link && (
+											<a href={project.data.link} target="_blank" rel="noopener">
+												Visit &rarr;
+											</a>
+										)}
+										{project.data.repo && (
+											<a href={project.data.repo} target="_blank" rel="noopener">
+												Source &rarr;
+											</a>
+										)}
+									</div>
+								)
+							}
+						</li>
+					))}
+				</ul>
+			) : (
+				<p class="empty">
+					Add project files in <code>src/content/projects</code>.
+				</p>
+			)
+		}
+	</div>
+</section>

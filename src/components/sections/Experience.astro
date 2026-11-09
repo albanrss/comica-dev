@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+
+const experiences = (await getCollection("experiences")).sort((a, b) =>
+	b.data.start.localeCompare(a.data.start),
+);
+---
+
+<section class="section" id="experience">
+	<div class="container">
+		<h2 class="section__title">Experience</h2>
+
+		{
+			experiences.length > 0 ? (
+				<ol class="timeline">
+					{experiences.map((item) => (
+						<li class:list={["timeline__item", `accent-${item.data.accent}`]}>
+							<span class="timeline__period">
+								{item.data.start} &mdash; {item.data.end ?? "Present"}
+							</span>
+
+							<h3 class="timeline__role">{item.data.role}</h3>
+							<p class="timeline__company">{item.data.company}</p>
+							<p class="timeline__desc">{item.data.description}</p>
+
+							{
+								item.data.stack.length > 0 && (
+									<ul class="tags">
+										{item.data.stack.map((tech) => (
+											<li class="tag">{tech}</li>
+										))}
+									</ul>
+								)
+							}
+						</li>
+					))}
+				</ol>
+			) : (
+				<p class="empty">
+					Add experience files in <code>src/content/experiences</code>.
+				</p>
+			)
+		}
+	</div>
+</section>

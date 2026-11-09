@@ -1,0 +1,30 @@
+---
+import { site } from "../../site.config";
+
+const meta = [site.location, site.email].filter(Boolean);
+---
+
+<section class="section" id="about">
+	<div class="container">
+		<h2 class="section__title">About</h2>
+
+		{
+			site.bio ? (
+				<p class="about__text">{site.bio}</p>
+			) : (
+				<p class="empty">
+					Add your bio in <code>src/site.config.ts</code>.
+				</p>
+			)
+		}
+
+		{
+			meta.length > 0 && (
+				<div class="about__meta">
+					{site.location && <span class="tag accent-grey">{site.location}</span>}
+					{site.email && <span class="tag accent-blue">{site.email}</span>}
+				</div>
+			)
+		}
+	</div>
+</section>

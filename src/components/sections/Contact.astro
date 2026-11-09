@@ -1,0 +1,46 @@
+---
+import { site } from "../../site.config";
+
+const hasContent = Boolean(site.email || site.socials.length);
+---
+
+<section class="section" id="contact">
+	<div class="container contact">
+		<h2 class="section__title">Contact</h2>
+
+		{
+			hasContent ? (
+				<>
+					{site.email && (
+						<a class="contact__email" href={`mailto:${site.email}`}>
+							{site.email}
+						</a>
+					)}
+
+					{
+						site.socials.length > 0 && (
+							<ul class="contact__links">
+								{site.socials.map((social) => (
+									<li>
+										<a
+											class="pill"
+											href={social.href}
+											target="_blank"
+											rel="noopener"
+										>
+											{social.label}
+										</a>
+									</li>
+								))}
+							</ul>
+						)
+					}
+				</>
+			) : (
+				<p class="empty">
+					Add your email and social links in <code>src/site.config.ts</code>.
+				</p>
+			)
+		}
+	</div>
+</section>
