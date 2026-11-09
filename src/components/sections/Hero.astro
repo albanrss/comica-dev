@@ -1,0 +1,17 @@
+---
+import { site } from "../../site.config";
+---
+
+<section class="section hero" id="top">
+	<div aria-hidden="true">
+		<span class="blob blob--blue"></span>
+		<span class="blob blob--pink"></span>
+		<span class="blob blob--green"></span>
+	</div>
+
+	<div class="container hero__inner">
+		{site.role && <p class="hero__eyebrow">{site.role}</p>}
+		<h1 class="hero__name">{site.name}</h1>
+		{site.tagline && <p class="hero__tagline">{site.tagline}</p>}
+	</div>
+</section>

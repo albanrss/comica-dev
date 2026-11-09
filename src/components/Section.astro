@@ -1,0 +1,25 @@
+---
+import type { SectionType } from "../site.config";
+import Hero from "./sections/Hero.astro";
+import About from "./sections/About.astro";
+import Projects from "./sections/Projects.astro";
+import Experience from "./sections/Experience.astro";
+import Contact from "./sections/Contact.astro";
+
+interface Props {
+	type: SectionType;
+}
+
+const components = {
+	hero: Hero,
+	about: About,
+	projects: Projects,
+	experience: Experience,
+	contact: Contact,
+} as const;
+
+const { type } = Astro.props;
+const Component = components[type];
+---
+
+{Component && <Component />}

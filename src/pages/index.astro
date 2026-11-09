@@ -1,9 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import { site } from "../site.config";
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<!-- Add your portfolio content here. -->
-	<h1>{SITE_TITLE}</h1>
+<BaseLayout title={site.name} description={site.description}>
+	{site.sections.map((type) => (
+		<Section type={type} />
+	))}
 </BaseLayout>
