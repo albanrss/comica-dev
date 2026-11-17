@@ -1,14 +1,20 @@
 ---
 import { getCollection } from "astro:content";
 
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+
 const projects = (await getCollection("projects")).sort(
 	(a, b) => (b.data.year ?? 0) - (a.data.year ?? 0),
 );
 ---
 
-<section class="section" id="projects">
+<section class="section" id="projets">
 	<div class="container">
-		<h2 class="section__title">Projects</h2>
+		{title && <h2 class="section__title">{title}</h2>}
 
 		{
 			projects.length > 0 ? (
@@ -39,12 +45,12 @@ const projects = (await getCollection("projects")).sort(
 									<div class="card__links">
 										{project.data.link && (
 											<a href={project.data.link} target="_blank" rel="noopener">
-												Visit &rarr;
+												Voir &rarr;
 											</a>
 										)}
 										{project.data.repo && (
 											<a href={project.data.repo} target="_blank" rel="noopener">
-												Source &rarr;
+												Code &rarr;
 											</a>
 										)}
 									</div>
@@ -55,7 +61,7 @@ const projects = (await getCollection("projects")).sort(
 				</ul>
 			) : (
 				<p class="empty">
-					Add project files in <code>src/content/projects</code>.
+					Ajoutez des projets dans <code>src/content/projects</code>.
 				</p>
 			)
 		}

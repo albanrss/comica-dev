@@ -1,19 +1,24 @@
 ---
 import { site } from "../../site.config";
 
-const meta = [site.location, site.email].filter(Boolean);
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+const meta = [site.location, site.email, site.phone].filter(Boolean);
 ---
 
-<section class="section" id="about">
+<section class="section" id="a-propos">
 	<div class="container">
-		<h2 class="section__title">About</h2>
+		{title && <h2 class="section__title">{title}</h2>}
 
 		{
 			site.bio ? (
 				<p class="about__text">{site.bio}</p>
 			) : (
 				<p class="empty">
-					Add your bio in <code>src/site.config.ts</code>.
+					Ajoutez votre bio dans <code>src/site.config.ts</code>.
 				</p>
 			)
 		}
@@ -23,6 +28,7 @@ const meta = [site.location, site.email].filter(Boolean);
 				<div class="about__meta">
 					{site.location && <span class="tag accent-grey">{site.location}</span>}
 					{site.email && <span class="tag accent-blue">{site.email}</span>}
+					{site.phone && <span class="tag accent-green">{site.phone}</span>}
 				</div>
 			)
 		}

@@ -1,13 +1,16 @@
 ---
-import type { SectionType } from "../site.config";
+import type { SectionConfig } from "../site.config";
 import Hero from "./sections/Hero.astro";
 import About from "./sections/About.astro";
 import Projects from "./sections/Projects.astro";
 import Experience from "./sections/Experience.astro";
+import Skills from "./sections/Skills.astro";
+import Education from "./sections/Education.astro";
+import Volunteering from "./sections/Volunteering.astro";
 import Contact from "./sections/Contact.astro";
 
 interface Props {
-	type: SectionType;
+	section: SectionConfig;
 }
 
 const components = {
@@ -15,11 +18,14 @@ const components = {
 	about: About,
 	projects: Projects,
 	experience: Experience,
+	skills: Skills,
+	education: Education,
+	volunteering: Volunteering,
 	contact: Contact,
 } as const;
 
-const { type } = Astro.props;
-const Component = components[type];
+const { section } = Astro.props;
+const Component = components[section.type];
 ---
 
-{Component && <Component />}
+{Component && <Component title={section.title} />}

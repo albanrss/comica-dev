@@ -3,16 +3,20 @@ import { site } from "../site.config";
 ---
 
 <header class="site-header">
-	<nav class="container site-header__inner" aria-label="Main">
+	<nav class="container site-header__inner" aria-label="Principale">
 		<a class="site-header__brand" href="#top">{site.name}</a>
 
-		<ul class="site-header__nav">
-			<li><a class="site-header__link" href="#top">Home</a></li>
+		<div class="site-header__nav">
 			{site.nav.map((item) => (
-				<li>
-					<a class="site-header__link" href={item.href}>{item.label}</a>
-				</li>
+				<a class="site-header__link" href={item.href}>{item.label}</a>
 			))}
-		</ul>
+			<a
+				class="site-header__cv"
+				href={site.cv.href}
+				download={site.cv.fileName}
+			>
+				{site.cv.shortLabel}
+			</a>
+		</div>
 	</nav>
 </header>

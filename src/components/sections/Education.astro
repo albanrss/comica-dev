@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+
+const entries = (await getCollection("education")).sort(
+	(a, b) =>
+		b.data.start.localeCompare(a.data.start) ||
+		(b.data.end ?? "").localeCompare(a.data.end ?? ""),
+);
+---
+
+<section class="section" id="formation">
+	<div class="container">
+		{title && <h2 class="section__title">{title}</h2>}
+
+		<ol class="timeline">
+			{entries.map((entry) => {
+				const period = entry.data.end
+					? entry.data.end === entry.data.start
+						? entry.data.start
+						: `${entry.data.start} — ${entry.data.end}`
+					: `${entry.data.start} — Présent`;
+
+				return (
+					<li class:list={["timeline__item", `accent-${entry.data.accent}`]}>
+						<span class="timeline__period">{period}</span>
+						<h3 class="timeline__role">{entry.data.title}</h3>
+						<p class="timeline__desc">{entry.data.detail}</p>
+					</li>
+				);
+			})}
+		</ol>
+	</div>
+</section>

@@ -1,5 +1,9 @@
 ---
 import { site } from "../../site.config";
+
+interface Props {
+	title?: string;
+}
 ---
 
 <section class="section hero" id="top">
@@ -13,5 +17,15 @@ import { site } from "../../site.config";
 		{site.role && <p class="hero__eyebrow">{site.role}</p>}
 		<h1 class="hero__name">{site.name}</h1>
 		{site.tagline && <p class="hero__tagline">{site.tagline}</p>}
+		{site.availability && <p class="hero__note">{site.availability}</p>}
+
+		<div class="hero__actions">
+			<a class="btn" href={site.cv.href} download={site.cv.fileName}>
+				{site.cv.label}
+			</a>
+			<a class="btn btn--ghost" href={site.heroCta.href}>
+				{site.heroCta.label}
+			</a>
+		</div>
 	</div>
 </section>

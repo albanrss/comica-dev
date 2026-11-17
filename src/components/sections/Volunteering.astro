@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+
+const entries = (await getCollection("volunteering")).sort(
+	(a, b) => b.data.year - a.data.year || a.data.order - b.data.order,
+);
+---
+
+<section class="section" id="benevolat">
+	<div class="container">
+		{title && <h2 class="section__title">{title}</h2>}
+
+		<ul class="volunteering">
+			{entries.map((entry) => (
+				<li class:list={["volunteering__item", `accent-${entry.data.accent}`]}>
+					<span class="volunteering__year">{entry.data.year}</span>
+					<span class="volunteering__title">{entry.data.title}</span>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

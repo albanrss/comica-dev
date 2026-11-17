@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+
+const groups = (await getCollection("skills")).sort(
+	(a, b) => a.data.order - b.data.order,
+);
+---
+
+<section class="section" id="competences">
+	<div class="container">
+		{title && <h2 class="section__title">{title}</h2>}
+
+		<ul class="grid">
+			{groups.map((group) => (
+				<li class:list={["card", `accent-${group.data.accent}`]}>
+					<h3 class="card__title">{group.data.title}</h3>
+					<ul class="tags">
+						{group.data.items.map((item) => (
+							<li class="tag">{item}</li>
+						))}
+					</ul>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

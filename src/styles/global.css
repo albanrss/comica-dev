@@ -213,6 +213,21 @@ main {
 	border-bottom-color: var(--pink);
 }
 
+.site-header__cv {
+	color: var(--ink);
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 700;
+	padding: 0.4rem 1rem;
+	border: 1px solid var(--ink);
+	border-radius: 999px;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+.site-header__cv:hover {
+	background: var(--ink);
+	color: var(--paper);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
 	border-top: 1px solid var(--line);
@@ -265,6 +280,20 @@ main {
 	font-size: clamp(1.15rem, 2.5vw, 1.4rem);
 	line-height: 1.5;
 	color: var(--ink-soft);
+}
+
+.hero__note {
+	margin: 1.5rem 0 0;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--accent-ink, var(--ink-soft));
+}
+
+.hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 2rem;
 }
 
 /* ---------- Organic decorations (pastel blobs) ---------- */
@@ -427,6 +456,35 @@ main {
 	transform: translateY(-2px);
 }
 
+/* ---------- Buttons ---------- */
+.btn {
+	display: inline-block;
+	padding: 0.7rem 1.5rem;
+	border-radius: 999px;
+	border: 1px solid var(--ink);
+	background: var(--ink);
+	color: var(--paper);
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 0.95rem;
+	transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
+		border-color 0.2s ease;
+}
+.btn:hover {
+	background: transparent;
+	color: var(--ink);
+	transform: translateY(-2px);
+}
+
+.btn--ghost {
+	background: transparent;
+	color: var(--ink);
+}
+.btn--ghost:hover {
+	background: var(--ink);
+	color: var(--paper);
+}
+
 /* ---------- Experience timeline ---------- */
 .timeline {
 	list-style: none;
@@ -507,6 +565,15 @@ main {
 .contact__email:hover {
 	color: var(--accent-ink);
 }
+.contact__phone {
+	display: block;
+	margin: -0.75rem 0 1.5rem;
+	color: var(--ink-soft);
+	text-decoration: none;
+}
+.contact__phone:hover {
+	color: var(--accent-ink);
+}
 .contact__links {
 	list-style: none;
 	display: flex;
@@ -515,6 +582,38 @@ main {
 	gap: 0.75rem;
 	margin: 0;
 	padding: 0;
+}
+
+/* ---------- Volunteering ---------- */
+.volunteering {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+.volunteering__item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 0.9rem 1.25rem;
+	box-shadow: var(--shadow-soft);
+}
+.volunteering__year {
+	flex: 0 0 auto;
+	font-size: 0.8rem;
+	font-weight: 700;
+	padding: 0.25rem 0.8rem;
+	border-radius: 999px;
+	background: var(--accent-color);
+	color: var(--ink);
+}
+.volunteering__title {
+	color: var(--ink);
 }
 
 /* ---------- Accent color modifiers ---------- */
@@ -568,8 +667,14 @@ main {
 	.section {
 		padding: 4rem 0;
 	}
+	.site-header__inner {
+		flex-wrap: wrap;
+		row-gap: 0.5rem;
+	}
 	.site-header__nav {
 		gap: 1rem;
+		flex-wrap: wrap;
+		row-gap: 0.5rem;
 	}
 	.site-footer__inner {
 		flex-direction: column;

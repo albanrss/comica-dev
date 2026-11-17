@@ -1,12 +1,17 @@
 ---
 import { site } from "../../site.config";
 
-const hasContent = Boolean(site.email || site.socials.length);
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+const hasContent = Boolean(site.email || site.phone || site.socials.length);
 ---
 
 <section class="section" id="contact">
 	<div class="container contact">
-		<h2 class="section__title">Contact</h2>
+		{title && <h2 class="section__title">{title}</h2>}
 
 		{
 			hasContent ? (
@@ -16,29 +21,26 @@ const hasContent = Boolean(site.email || site.socials.length);
 							{site.email}
 						</a>
 					)}
+					{site.phone && (
+						<a class="contact__phone" href={`tel:${site.phone.replace(/\s/g, "")}`}>
+							{site.phone}
+						</a>
+					)}
 
-					{
-						site.socials.length > 0 && (
-							<ul class="contact__links">
-								{site.socials.map((social) => (
-									<li>
-										<a
-											class="pill"
-											href={social.href}
-											target="_blank"
-											rel="noopener"
-										>
-											{social.label}
-										</a>
-									</li>
-								))}
-							</ul>
-						)
-					}
+					<div class="contact__links">
+						<a class="pill" href={site.cv.href} download={site.cv.fileName}>
+							{site.cv.label}
+						</a>
+						{site.socials.map((social) => (
+							<a class="pill" href={social.href} target="_blank" rel="noopener">
+								{social.label}
+							</a>
+						))}
+					</div>
 				</>
 			) : (
 				<p class="empty">
-					Add your email and social links in <code>src/site.config.ts</code>.
+					Ajoutez votre email et vos liens sociaux dans <code>src/site.config.ts</code>.
 				</p>
 			)
 		}
