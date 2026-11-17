@@ -3,6 +3,6 @@
 	"description": "Plateforme web pour JEB Incubator, dédiée à l'accompagnement de startups. Mise en avant des projets incubés, mise en relation avec investisseurs et partenaires, recherche et filtrage avancés. Frontend Next.js, backend Django.",
 	"year": 2025,
 	"stack": ["Next.js", "Django", "Python", "SQLite", "Docker", "GitHub Actions"],
-	"accent": "green",
+	"accent": "grey",
 	"repo": "https://github.com/My-Epitech-Organisation/Survivor"
 }
