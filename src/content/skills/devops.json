@@ -1,0 +1,6 @@
+{
+	"title": "DevOps & Outils",
+	"order": 4,
+	"accent": "grey",
+	"items": ["Docker", "Git", "GitHub", "Cloudflare", "GitHub Actions", "Jenkins", "Heroku", "Sentry", "Kubernetes"]
+}

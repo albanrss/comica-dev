@@ -1,0 +1,6 @@
+{
+	"title": "IA & Agents",
+	"order": 5,
+	"accent": "blue",
+	"items": ["OpenCode CLI", "Antigravity CLI"]
+}

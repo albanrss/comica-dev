@@ -1,0 +1,9 @@
+{
+	"role": "Développeur Fullstack — stage de 4 mois",
+	"company": "Tranquil IT",
+	"start": "2026",
+	"end": "2026",
+	"description": "Reconstruction complète de l'espace client : modernisation (ajout d'un ORM), refonte (fonctionnalités équivalentes en remplaçant 120 000 lignes de code par 30 000), développement de fonctionnalités (lancements d'appels avec Asterisk, système de notifications modulaire) et maintenance. Applications web en Python avec Flask et templates Jinja.",
+	"stack": ["Python", "Flask", "Jinja", "SQL", "Asterisk"],
+	"accent": "blue"
+}

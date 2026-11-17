@@ -1,0 +1,7 @@
+{
+	"title": "Robocar",
+	"description": "Création et entraînement de plusieurs modèles d'IA avec PyTorch. Développement d'une voiture miniature autonome et des circuits embarqués (Jetson Nano). Tournoi inter-campus à Paris.",
+	"year": 2025,
+	"stack": ["Python", "PyTorch", "Jetson Nano", "Embarqué", "IA"],
+	"accent": "green"
+}

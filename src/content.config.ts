@@ -1,14 +1,17 @@
 import { defineCollection, z } from "astro:content";
 
 /**
- * Content collections — the config files that hold projects,
- * experiences, and posts.
+ * Collections de contenu — les fichiers de configuration qui alimentent
+ * tout le contenu du site.
  *
- * - projects     -> JSON/YAML files in `src/content/projects/`
- * - experiences  -> JSON/YAML files in `src/content/experiences/`
- * - posts        -> Markdown/MDX files in `src/content/posts/`
+ * - projects      -> fichiers JSON/YAML dans `src/content/projects/`
+ * - experiences   -> fichiers JSON/YAML dans `src/content/experiences/`
+ * - skills        -> fichiers JSON/YAML dans `src/content/skills/`
+ * - education     -> fichiers JSON/YAML dans `src/content/education/`
+ * - volunteering  -> fichiers JSON/YAML dans `src/content/volunteering/`
+ * - posts         -> fichiers Markdown/MDX dans `src/content/posts/`
  *
- * The `accent` field picks a pastel color from the design sheet:
+ * Le champ `accent` choisit une couleur pastel de la charte graphique :
  * "blue" | "pink" | "green" | "grey".
  */
 
@@ -23,7 +26,6 @@ const projects = defineCollection({
 		link: z.string().url().optional(),
 		repo: z.string().url().optional(),
 		stack: z.array(z.string()).default([]),
-		featured: z.boolean().default(false),
 		accent,
 	}),
 });
@@ -33,10 +35,41 @@ const experiences = defineCollection({
 	schema: z.object({
 		role: z.string(),
 		company: z.string(),
-		start: z.string(), // e.g. "2021-03"
-		end: z.string().optional(), // omit for "Present"
+		start: z.string(), // ex. "2021-03"
+		end: z.string().optional(), // omettre pour "Présent"
 		description: z.string(),
 		stack: z.array(z.string()).default([]),
+		accent,
+	}),
+});
+
+const skills = defineCollection({
+	type: "data",
+	schema: z.object({
+		title: z.string(),
+		items: z.array(z.string()).default([]),
+		order: z.number().int().default(0),
+		accent,
+	}),
+});
+
+const education = defineCollection({
+	type: "data",
+	schema: z.object({
+		title: z.string(),
+		start: z.string(), // ex. "2023"
+		end: z.string().optional(), // omettre pour "Présent"
+		detail: z.string(),
+		accent,
+	}),
+});
+
+const volunteering = defineCollection({
+	type: "data",
+	schema: z.object({
+		title: z.string(),
+		year: z.number().int(),
+		order: z.number().int().default(0),
 		accent,
 	}),
 });
@@ -51,4 +84,11 @@ const posts = defineCollection({
 	}),
 });
 
-export const collections = { projects, experiences, posts };
+export const collections = {
+	projects,
+	experiences,
+	skills,
+	education,
+	volunteering,
+	posts,
+};

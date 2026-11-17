@@ -1,0 +1,8 @@
+{
+	"title": "Introduction au COBOL",
+	"description": "Exercices de découverte : fonctions, algorithmes, structures de données, gestion des entrées/sorties, analyse syntaxique et mise en place de tests unitaires.",
+	"year": 2026,
+	"stack": ["COBOL", "Algorithmes", "Tests unitaires"],
+	"accent": "grey",
+	"repo": "https://github.com/albanrss/introToCobol"
+}

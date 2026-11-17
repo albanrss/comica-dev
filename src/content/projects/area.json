@@ -1,0 +1,8 @@
+{
+	"title": "AREA",
+	"description": "Gestionnaire d'automatisations. Plateforme web et mobile (Next.js et Flutter) avec serveur en Express.js. Utilisation de webhooks et OAuth2 avec Passport.js pour créer des automatisations entre différents services.",
+	"year": 2025,
+	"stack": ["TypeScript", "Flutter", "Next.js", "Express.js", "OAuth2"],
+	"accent": "pink",
+	"repo": "https://github.com/cafe-sur-cour/AREA"
+}

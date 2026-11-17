@@ -1,0 +1,6 @@
+{
+	"title": "Bases de données",
+	"order": 3,
+	"accent": "green",
+	"items": ["PostgreSQL", "SQLite"]
+}

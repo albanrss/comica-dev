@@ -1,0 +1,6 @@
+{
+	"title": "Langages",
+	"order": 1,
+	"accent": "blue",
+	"items": ["Python", "TypeScript", "C++", "C", "SQL", "Haskell", "Assembleur", "COBOL"]
+}

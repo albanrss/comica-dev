@@ -1,0 +1,9 @@
+{
+	"role": "Développeur Fullstack — stage de 5 mois",
+	"company": "Mixity",
+	"start": "2024",
+	"end": "2024",
+	"description": "Développement d'un dashboard React et d'un backend Django. Méthode d'organisation Agile (sprint plannings, sprint reviews, daily meetings). Responsable de projet d'intégration de l'IA au produit via l'API d'OpenAI. CI/CD avec GitHub Actions, Docker et Heroku. Gestion des erreurs avec Sentry.",
+	"stack": ["React", "Django", "Python", "OpenAI", "Docker", "GitHub Actions"],
+	"accent": "pink"
+}

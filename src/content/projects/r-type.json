@@ -1,0 +1,8 @@
+{
+	"title": "R-Type",
+	"description": "Moteur de jeu ECS et jeu multijoueur en réseau. Contribution importante au cœur du moteur. Architecture client/serveur autoritaire, serveur multithreadé, protocole binaire UDP avec paquets compressés (zlib) et support multi-plateforme (Unix / Windows). CMake et vcpkg.",
+	"year": 2026,
+	"stack": ["C++", "ECS", "UDP", "Multijoueur", "CMake", "vcpkg"],
+	"accent": "blue",
+	"repo": "https://github.com/cafe-sur-cour/ryanR-type"
+}

@@ -51,7 +51,6 @@ defined (and validated) by the Zod schemas in `src/content.config.ts`.
   "link": "https://example.com",
   "repo": "https://github.com/you/repo",
   "stack": ["TypeScript", "Astro"],
-  "featured": true,
   "accent": "blue"
 }
 ```

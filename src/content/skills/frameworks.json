@@ -1,0 +1,6 @@
+{
+	"title": "Frameworks & Technologies",
+	"order": 2,
+	"accent": "pink",
+	"items": ["Flutter", "Next.js", "React", "Django", "Flask", "Astro"]
+}
