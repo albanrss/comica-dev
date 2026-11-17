@@ -1,0 +1,8 @@
+{
+	"title": "RayTracer",
+	"description": "Moteur de rendu 3D par ray tracing en C++. Rendu physiquement réaliste (réflexion, réfraction, occlusion ambiante, normal mapping), matériaux et textures procédurales, scènes configurables (libconfig++) et multithreading. Aperçu temps réel via SFML.",
+	"year": 2025,
+	"stack": ["C++", "Ray Tracing", "CMake", "SFML", "libconfig++"],
+	"accent": "blue",
+	"repo": "https://github.com/albanrss/RayTracer"
+}
