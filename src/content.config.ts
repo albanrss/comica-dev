@@ -9,7 +9,6 @@ import { defineCollection, z } from "astro:content";
  * - skills        -> fichiers JSON/YAML dans `src/content/skills/`
  * - education     -> fichiers JSON/YAML dans `src/content/education/`
  * - volunteering  -> fichiers JSON/YAML dans `src/content/volunteering/`
- * - posts         -> fichiers Markdown/MDX dans `src/content/posts/`
  *
  * Le champ `accent` choisit une couleur pastel de la charte graphique :
  * "blue" | "pink" | "green" | "grey".
@@ -74,21 +73,10 @@ const volunteering = defineCollection({
 	}),
 });
 
-const posts = defineCollection({
-	type: "content",
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		date: z.coerce.date(),
-		tags: z.array(z.string()).default([]),
-	}),
-});
-
 export const collections = {
 	projects,
 	experiences,
 	skills,
 	education,
 	volunteering,
-	posts,
 };

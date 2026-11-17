@@ -10,7 +10,7 @@ of sections, and content lives in config files (content collections).
 ```
 src/
   site.config.ts       # identity, nav, socials, homepage section order
-  content.config.ts    # schemas for projects / experiences / posts
+  content.config.ts    # schemas for projects / experiences
   styles/global.css    # the design sheet (single source of style)
   components/
     sections/          # one component per section ("brick")
@@ -23,7 +23,6 @@ src/
   content/
     projects/          # JSON/YAML config files, one per project
     experiences/       # JSON/YAML config files, one per role
-    posts/             # Markdown/MDX, one per post
 ```
 
 ## Adding and ordering sections
@@ -71,19 +70,6 @@ defined (and validated) by the Zod schemas in `src/content.config.ts`.
 
 `accent` accepts `"blue" | "pink" | "green" | "grey"` and picks the matching
 pastel color from the design sheet. Omit `end` to show "Present".
-
-Posts are Markdown/MDX files with frontmatter:
-
-```md
----
-title: "Hello"
-description: "A post"
-date: 2026-01-15
-tags: ["writing"]
----
-
-Body here.
-```
 
 ## Commands
 

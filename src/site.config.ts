@@ -5,6 +5,10 @@
  * Le contenu éditorial (projets, expériences, compétences, formation,
  * bénévolat) vit dans les collections de `src/content/`.
  * Ajoutez ou réordonnez les sections en éditant le tableau `sections`.
+ *
+ * Les données personnelles (email, téléphone) sont lues depuis les variables
+ * d'environnement définies dans `astro.config.mjs` et ne sont jamais
+ * commitées : voir `.env.example`.
  */
 
 export type SectionType =
