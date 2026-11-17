@@ -27,8 +27,12 @@ const meta = [site.location, site.email, site.phone].filter(Boolean);
 			meta.length > 0 && (
 				<div class="about__meta">
 					{site.location && <span class="tag accent-grey">{site.location}</span>}
-					{site.email && <span class="tag accent-blue">{site.email}</span>}
-					{site.phone && <span class="tag accent-green">{site.phone}</span>}
+					{site.email && (
+						<a class="tag accent-blue" href={`mailto:${site.email}`}>{site.email}</a>
+					)}
+					{site.phone && (
+						<a class="tag accent-green" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+					)}
 				</div>
 			)
 		}

@@ -438,6 +438,7 @@ main {
 	border-radius: 999px;
 	background: var(--accent-color);
 	color: var(--ink);
+	text-decoration: none;
 }
 
 .pill {
