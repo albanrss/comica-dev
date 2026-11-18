@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
@@ -9,6 +9,12 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
 	site: "https://comica.dev",
 	integrations: [mdx(), sitemap()],
+	env: {
+		schema: {
+			CONTACT_EMAIL: envField.string({ context: "server", access: "secret" }),
+			CONTACT_PHONE: envField.string({ context: "server", access: "secret" }),
+		},
+	},
 	adapter: cloudflare({
 		platformProxy: {
 			enabled: true,

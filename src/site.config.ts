@@ -11,6 +11,8 @@
  * commitées : voir `.env.example`.
  */
 
+import { CONTACT_EMAIL, CONTACT_PHONE } from "astro:env/server";
+
 export type SectionType =
 	| "hero"
 	| "about"
@@ -72,8 +74,8 @@ export const site: SiteConfig = {
 		"Je conçois et développe des expériences web et logicielles réfléchies, accessibles et utiles.",
 	description: "Portfolio d'Alban Roussée, développeur fullstack.",
 	location: "Nantes, France",
-	email: "",
-	phone: "",
+	email: CONTACT_EMAIL,
+	phone: CONTACT_PHONE,
 	bio: "Étudiant en informatique à Epitech (4e année, en échange à l'Université d'Osaka), je développe des applications web, mobiles et logicielles, du backend au frontend. Curieux et polyvalent, j'aime autant le DevOps, l'embarqué que la sécurité.",
 	availability:
 		"Disponible pour un stage de 6 mois — de septembre 2027 à février 2028.",
